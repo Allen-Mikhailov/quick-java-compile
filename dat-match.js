@@ -16,8 +16,8 @@ exports.go = function()
         if (file.substring(file.lastIndexOf(".")) == ".dat")
         {
             const file_name = file.substring(0, file.lastIndexOf("."))
-            const out = javaSample.toString().replace("Sample", cap(file_name)).replace("sample", file_name)
-
+            let out = javaSample.toString().replace("Sample", cap(file_name))
+            out = out.replace('"SampleInput"' `new File("./${file_name}.dat")`)
             fs.writeFileSync(cap(file_name)+".java", out)
         }
     })
